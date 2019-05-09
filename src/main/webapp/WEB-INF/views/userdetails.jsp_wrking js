@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Details Page</title>
+</head>
+<body>
+	<div class="form">
+		<form action="saveuser" method="post" onsubmit="return checkUser()">
+			<table>
+				<tr>
+					<td>User name :</td>
+					<td><input id="username" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password :</td>
+					<td><input id="password" name="password" type="password"></td>
+				</tr>
+				<tr>
+					<td>First name :</td>
+					<td><input id="firstname" name="firstname"></td>
+				</tr>
+				<tr>
+					<td>Last name :</td>
+					<td><input id="lastname" name="lastname"></td>
+				</tr>
+				<tr>
+					<td>Phone :</td>
+					<td><input id="phone" name="phone"></td>
+				</tr>
+				<tr>
+					<td>Email id :</td>
+					<td><input id="emailid" name="emailid"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
+
+	<script type="text/javascript" src="/resources/js/userdetails.js"></script>
+</body>
+</html>
