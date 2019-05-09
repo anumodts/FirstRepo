@@ -39,7 +39,7 @@ public class HelloController {
 		System.out.println("inside check user");
 //		System.out.println("User name is "+search.getUsername());
 		Boolean isUserExists=springBootService.checkUser(search.getUsername());
-	
+		System.out.println("inside check user, user existance status is "+isUserExists);
 		 return ResponseEntity.ok(isUserExists);
 	}
 
