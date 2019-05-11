@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -48,7 +49,7 @@ public class HelloController {
 			@RequestParam("emailid") String emailId, @RequestParam("phone") String phoneNumber, Model m) {
 		UserDetailsEntity uerDetailsEntity = new UserDetailsEntity();
 		uerDetailsEntity.setUserName(userName);
-		uerDetailsEntity.setPassword(password);
+		uerDetailsEntity.setPassword(new BCryptPasswordEncoder().encode(password));
 		uerDetailsEntity.setFirstName(firstName);
 		uerDetailsEntity.setLastName(lastName);
 		uerDetailsEntity.setEmailId(emailId);

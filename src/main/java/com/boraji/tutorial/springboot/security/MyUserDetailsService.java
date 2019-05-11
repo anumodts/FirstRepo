@@ -14,7 +14,10 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		UserSecurityEntity userSecurityEntity= userRepo.findByUserName(userName);
+		UserSecurityEntity userSecurityEntity= userRepo.findByuserName(userName);
+		if(userSecurityEntity==null) {
+			throw new UsernameNotFoundException(userName+" not found");
+		}
 		
 		return new UserPrincipal(userSecurityEntity);
 	}

@@ -2,8 +2,10 @@ package com.boraji.tutorial.springboot.security;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<UserSecurityEntity, Long> {
+import com.boraji.tutorial.springboot.entity.UserDetailsEntity;
+
+public interface UserRepo extends JpaRepository<UserDetailsEntity, String> {
 	
-	UserSecurityEntity findByUserName(String userName);
+	UserSecurityEntity findByuserName(String userName);
 
 }
