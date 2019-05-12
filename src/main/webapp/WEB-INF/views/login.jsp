@@ -13,14 +13,15 @@
 </head>
 <body>
 	<div class="form">
-		<form action="hello" method="post" onsubmit="return validate()">
+${SPRING_SECURITY_LAST_EXCEPTION.message}
+		<form action="login" method="post" onsubmit="return validate()">
 			<table>
 				<tr>
 					<td>User name</td>
-					<td><input id="name" name="name"></td>
+					<td><input id="username" name="username"></td>
 				<tr>
 					<td>Password</td>
-					<td><input id="password" name="name" type="password"></td>
+					<td><input id="password" name="password" type="password"></td>
 				</tr>
 				<tr>
 					<td></td>

@@ -7,20 +7,22 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.boraji.tutorial.springboot.entity.UserDetailsEntity;
+
 public class UserPrincipal implements UserDetails {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5431904271497420536L;
-	private UserSecurityEntity userSecurityEntity;
+	private UserDetailsEntity userDetailsEntity;
 	
 	
 	
 
-	public UserPrincipal(UserSecurityEntity userSecurityEntity) {
+	public UserPrincipal(UserDetailsEntity userDetailsEntity) {
 		super();
-		this.userSecurityEntity = userSecurityEntity;
+		this.userDetailsEntity = userDetailsEntity;
 	}
 
 	@Override
@@ -32,13 +34,13 @@ public class UserPrincipal implements UserDetails {
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return userSecurityEntity.getPassword();
+		return userDetailsEntity.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return userSecurityEntity.getUserName();
+		return userDetailsEntity.getUserName();
 	}
 
 	@Override

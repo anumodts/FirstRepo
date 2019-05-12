@@ -6,6 +6,6 @@ import com.boraji.tutorial.springboot.entity.UserDetailsEntity;
 
 public interface UserRepo extends JpaRepository<UserDetailsEntity, String> {
 	
-	UserSecurityEntity findByuserName(String userName);
+	UserDetailsEntity findByuserName(String userName);
 
 }

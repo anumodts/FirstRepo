@@ -25,21 +25,27 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
 		daoAuthenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
 		return daoAuthenticationProvider;
 	}
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		
-		http
-		.csrf()
-		.disable()
-		.authorizeRequests().anyRequest().permitAll()
-		.and()
-		.formLogin()
-		.loginPage("/")
-		.permitAll();
-		
-
-	}
+	
+	  @Override protected void configure(HttpSecurity http) throws Exception {
+	  
+		/*
+		 * http.authorizeRequests() .antMatchers("/login") .permitAll() .and()
+		 * .formLogin() .and().logout().logoutSuccessUrl("/login").permitAll()
+		 * .and().csrf().disable();
+		 */
+		  
+		  http
+		  .csrf()
+		  .disable()
+		  .authorizeRequests().antMatchers("/login")
+		  .permitAll()
+		  .and()
+		  .formLogin()
+		  .loginPage("/login")
+		  .permitAll();
+	  
+	  }
+	 
 	
 	
 }

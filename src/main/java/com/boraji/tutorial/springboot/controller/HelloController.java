@@ -25,15 +25,22 @@ public class HelloController {
 	@Autowired
 	SpringBootService springBootService;
 
-	@RequestMapping("/")
+	@RequestMapping("/login")
 	public String index() {
-		return "index";
+		return "login";
+	}
+	
+	@RequestMapping("/")
+	public String homePage() {
+		return "home";
 	}
 
 	@RequestMapping("/createUser")
 	public String createUser() {
 		return "userdetails";
 	}
+	
+
 	
 	@RequestMapping("/checkuser")
 	public ResponseEntity<?> checkUser( @Valid @RequestBody SearchCriteria search, Errors errors) {
@@ -60,8 +67,8 @@ public class HelloController {
 	}
 
 	@PostMapping("/hello")
-	public String sayHello(@RequestParam("name") String name, Model model) {
-		model.addAttribute("name", name);
+	public String sayHello(@RequestParam("username") String name, Model model) {
+		model.addAttribute("username", name);
 		return "hello";
 	}
 }
