@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.util.AntPathMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -28,24 +30,35 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	  @Override protected void configure(HttpSecurity http) throws Exception {
 	  
-		/*
-		 * http.authorizeRequests() .antMatchers("/login") .permitAll() .and()
-		 * .formLogin() .and().logout().logoutSuccessUrl("/login").permitAll()
-		 * .and().csrf().disable();
-		 */
-		  
 		  http
 		  .csrf()
 		  .disable()
-		  .authorizeRequests().antMatchers("/login")
+		  .authorizeRequests()
+		  .anyRequest().authenticated()
+		  .and()
+		  .httpBasic()
+		  .and()
+		  .authorizeRequests()
+		  .antMatchers("/css/**","/js/**")
 		  .permitAll()
+		  .anyRequest()
+		  .permitAll()
+				/*
+				 * .and() .authorizeRequests().antMatchers("/login") .permitAll()
+				 */
 		  .and()
 		  .formLogin()
 		  .loginPage("/login")
-		  .permitAll();
-	  
+		  .defaultSuccessUrl("/home")
+		  .and()
+		  .logout()
+		  .invalidateHttpSession(true)
+		  .clearAuthentication(true)
+		  .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		  .logoutSuccessUrl("/login");
 	  }
 	 
 	
 	
 }
+

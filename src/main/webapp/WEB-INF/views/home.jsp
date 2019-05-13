@@ -11,6 +11,7 @@
   <hr>
 
   <h2>Your name is ${username}</h2>
+  <a href="logout">Logout</a>
 
 </body>
 </html>

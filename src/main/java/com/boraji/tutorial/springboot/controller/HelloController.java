@@ -30,7 +30,12 @@ public class HelloController {
 		return "login";
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping("/logout")
+	public String logOut() {
+		return "login";
+	}
+	
+	@RequestMapping("/home")
 	public String homePage() {
 		return "home";
 	}
