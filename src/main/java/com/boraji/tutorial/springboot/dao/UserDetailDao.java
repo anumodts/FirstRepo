@@ -21,6 +21,8 @@ public class UserDetailDao {
 		}catch (Throwable throwable) {
 			throwable.printStackTrace();
 		}
+		
+		
 	}
 
 	public boolean checkUser(String username) {

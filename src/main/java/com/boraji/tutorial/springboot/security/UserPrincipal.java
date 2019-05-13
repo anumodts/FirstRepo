@@ -37,6 +37,7 @@ public class UserPrincipal implements UserDetails {
 		return userDetailsEntity.getPassword();
 	}
 
+	
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub

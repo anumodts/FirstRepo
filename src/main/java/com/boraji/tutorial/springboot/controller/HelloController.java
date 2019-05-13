@@ -30,6 +30,8 @@ public class HelloController {
 		return "login";
 	}
 	
+	
+	
 	@RequestMapping("/logout")
 	public String logOut() {
 		return "login";

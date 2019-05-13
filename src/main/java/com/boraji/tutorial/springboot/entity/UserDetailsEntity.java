@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDetailsEntity {
 	
+	
+	
 	@Id
 	@Column(name="USERID")
 	private String userName;
