@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <!-- Static content -->
-<link rel="stylesheet" href="/resources/css/style.css">
+<link rel="stylesheet" href="/resources/css/login.css">
 
 
 <title>Login</title>
