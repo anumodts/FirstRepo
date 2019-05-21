@@ -7,11 +7,11 @@
 <title>Spring Boot</title>
 </head>
 <body>
-  <h1>Spring Boot - MVC web application example</h1>
+  <h1>Welcome ${username}</h1>
   <hr>
 
-  <h2>Your name is ${username}</h2>
   <a href="logout">Logout</a>
 
 </body>
 </html>
+

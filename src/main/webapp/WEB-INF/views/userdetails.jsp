@@ -23,32 +23,39 @@
 				
 					<b>Password</b>
 					<br>
-					<input id="password" name="password" type="password" placeholder="Enter Password">
+					<input id="password" name="password" type="password" placeholder="Enter Password" disabled>
 					<br>
+					
+					<b>Confirm Password</b>
+					<br>
+					<input id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm Password" disabled>
+					<br>
+					<div class="userexistmessage" id="confirmpasswordfeedback" ></div>
+					
 				
 					<b>First Name</b>
 					<br>
-					<input id="firstname" name="firstname" type="text" placeholder="Enter First Name">
+					<input id="firstname" name="firstname" type="text" placeholder="Enter First Name" disabled>
 					<br>
 				
 				
 					<b>Last Name</b>
 					<br>
-					<input id="lastname" name="lastname" type="text" placeholder="Enter Last Name">
+					<input id="lastname" name="lastname" type="text" placeholder="Enter Last Name" disabled>
 					<br>
 				
 					<b>Phone Number</b>
 					<br>
-					<input id="phone" name="phone" type="text" placeholder="Enter Phone Number">
+					<input id="phone" name="phone" type="text" placeholder="Enter Phone Number" disabled>
 					<br>
 			
 					<b>Email id</b>
 					<br>
-					<input id="emailid" name="emailid" type="text" placeholder="Enter Email Id">
+					<input id="emailid" name="emailid" type="text" placeholder="Enter Email Id" disabled>
 					<br>
 				
 					
-					<button type="submit" id="registerbtn" class="registerbtn">Register</button>
+					<button type="submit" id="registerbtn" class="registerbtn" disabled>Register</button>
 					
 					
 
